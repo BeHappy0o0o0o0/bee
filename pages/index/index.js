@@ -21,7 +21,10 @@ Page({
     share_goods_id: undefined,
     share_pingtuan_open_id: undefined,
     lijipingtuanbuy: false,
-    pingtuan_open_id: undefined
+    pingtuan_open_id: undefined,
+    openScan: false,
+    openWaimai: false,
+    openZiqu: false
   },  
   onLoad: function (e) {
     // 测试拼团入口
@@ -130,8 +133,13 @@ Page({
       this.setData({
         shops: res.data,
         shopInfo: res.data[0],
-        shopIsOpened: this.checkIsOpened(res.data[0].openingHours)
+        shopIsOpened: this.checkIsOpened(res.data[0].openingHours),
+        openScan: res.data[0].openScan,
+        openWaimai: res.data[0].openWaimai,
+        openZiqu: res.data[0].openZiqu
       })
+      console.log(res.data[0])
+
       wx.setStorageSync('shopInfo', res.data[0])
     } 
   },
@@ -200,7 +208,7 @@ Page({
     }
     res.data.forEach(ele => {
       if (!ele.characteristic) {
-        ele.characteristic = '清凉一夏'
+        ele.characteristic = '测试数据'
       }
     })
     this.setData({

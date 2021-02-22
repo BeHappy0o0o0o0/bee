@@ -21,7 +21,7 @@ page {
   display: flex;
   align-items: center;
   font-size: 25rpx;
-  width:180rpx ;
+  /* width:180rpx ; */
   height: 60rpx;
   border-radius: 32rpx;
   background-color: #f6f6f6;

@@ -233,7 +233,7 @@ Page({
     // console.log(e)
     WXAPI.orderCreate(postData)
     .then(function (res) {     
-      console.log(res.data) 
+      // console.log(res.data) 
       if (res.code != 0) {
         wx.showModal({
           title: '错误',
